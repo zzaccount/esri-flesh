@@ -1,0 +1,26 @@
+{
+  "name": "esri-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite && npm run copy",
+    "build": "vite build && npm run copy",
+    "preview": "vite preview",
+    "copy": "ncp ./node_modules/@arcgis/core/assets ./public/assets"
+  },
+  "dependencies": {
+    "@arcgis/core": "^4.26.5",
+    "@kjgl77/datav-vue3": "^1.5.0",
+    "echarts": "^5.4.2",
+    "less": "^4.1.3",
+    "normalize.css": "^8.0.1",
+    "pinia": "^2.0.33",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.1.0",
+    "vite": "^4.2.0"
+  }
+}
