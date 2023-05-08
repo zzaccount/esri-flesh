@@ -6,27 +6,31 @@
       <div class="container" :style="`width: ${width}rem`" h18rem color-white flex justify-center items-center>
         <!-- 左侧列表 -->
         <div class="left"><!-- 通过title 进行控制 -->
-          <homePanel class="left-panel panel" title="基地种类">
-            <div class="jidizhonglei">
-              <!-- 动态环图 -->
-              <dv-active-ring-chart :config="zhongleiconf" style="width:150px;height:150px" />
+          <homePanel class="left-panel panel" title="天气情况">
+            <div class="weather">
+              
             </div>
           </homePanel>
-          <homePanel class="left-panel panel"></homePanel>
-          <homePanel class="left-panel panel"></homePanel>
-          <homePanel class="left-panel panel"></homePanel>
+          <homePanel class="left-panel panel" title="最近农事"></homePanel>
+          <homePanel class="left-panel panel" title="虫情检测"></homePanel>
+          <homePanel class="left-panel panel" title="视频监控"></homePanel>
         </div>
         <!-- 中间展示 -->
         <div class="middle">
-          <!-- 地图 -->
-          <HomeMap class="map"></HomeMap>
+            <!-- 地图 -->
+            <HomeMap class="map"></HomeMap>
         </div>
         <!-- 右侧列表 -->
         <div class="right">
-          <homePanel class="panel">
+          <homePanel class="panel" title="果树信息">
+            <div class="jidizhonglei">
+              <!-- 动态环图 -->
+              <dv-active-ring-chart :config="zhongleiconf" style="width:150px;height:150px;" />
+              
+            </div>
           </homePanel>
-          <homePanel class="panel"></homePanel>
-          <homePanel class="panel"></homePanel>
+          <homePanel class="panel" title="发展趋势"></homePanel>
+          <homePanel class="panel" title="设备统计"></homePanel>
           <homePanel class="panel"></homePanel>
         </div>
       </div>
@@ -49,29 +53,29 @@ export default {
     HomeMap,
     homePanel
   },
-  setup(){
+  setup() {
     /* 动态环图配置 */
     const zhongleiconf = reactive({
-      lineWidth:24,
-      digitalFlopStyle:{
+      lineWidth: 24,
+      digitalFlopStyle: {
         fill: 'pink',
         fontSize: 18,
       },
-      data:[
+      data: [
         {
-          name:"金柚",
+          name: "金柚",
           value: 90,
         },
         {
-          name:"荔枝",
+          name: "荔枝",
           value: 30,
         },
         {
-          name:"苹果",
+          name: "苹果",
           value: 10,
         }
       ],
-      color:[
+      color: [
         "rgba(45, 225, 253, 1)",
         "rgba(18, 254, 224, 1)",
         "rgba(105, 136, 248, 1) "
@@ -156,9 +160,9 @@ export default {
   }
 
   .panel {
-      width: 100%;
-      height: 100%;
-    }
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .bottom {
