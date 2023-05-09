@@ -6,14 +6,21 @@
       <div class="container" :style="`width: ${width}rem`" h18rem color-white flex justify-center items-center>
         <!-- 左侧列表 -->
         <div class="left"><!-- 通过title 进行控制 -->
-          <homePanel class="left-panel panel" title="天气情况">
-            <div class="weather">
-              
+          <homePanel class="left-panel panel" title="农场基本信息">
+            <div class="farmdata">
+
             </div>
           </homePanel>
-          <homePanel class="left-panel panel" title="最近农事"></homePanel>
-          <homePanel class="left-panel panel" title="虫情检测"></homePanel>
-          <homePanel class="left-panel panel" title="视频监控"></homePanel>
+          <homePanel class="left-panel panel" title="收获产量统计">
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </homePanel>
+
+         
         </div>
         <!-- 中间展示 -->
         <div class="middle">
@@ -35,9 +42,7 @@
         </div>
       </div>
     </dv-border-box1>
-    <div class="bottom">
 
-    </div>
   </div>
 </template>
 
@@ -95,18 +100,19 @@ export default {
 }
 
 .home {
-  background: linear-gradient(180deg, rgba(12, 19, 71, 1) 0%, rgba(11, 28, 157, 1) 6.09%, rgba(2, 12, 73, 1) 39.29%, rgba(2, 12, 73, 1) 80.1%, rgba(9, 26, 146, 1) 100%);
+  //background: linear-gradient(180deg, rgba(12, 19, 71, 1) 0%, rgba(11, 28, 157, 1) 6.09%, rgba(2, 12, 73, 1) 39.29%, rgba(2, 12, 73, 1) 80.1%, rgba(9, 26, 146, 1) 100%);
   width: 100vw;
   height: 100vh;
+  background-color: black;
 }
 
 .nav {
   left: 0px;
   top: 0px;
   width: 100vw;
-  height: 86px;
+  height: 76px;
   opacity: 1;
-  background: url('../../assets/images/nav.png') no-repeat;
+  background: url('../../assets/images/nav.webp') no-repeat;
   border: 1px solid rgba(0, 0, 0, 1);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
   margin-bottom: 32px;

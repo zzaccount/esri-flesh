@@ -19,7 +19,7 @@ export default {
 
     //arcgis for js 加载天地图
     var tiledLayer = new WebTileLayer({
-      urlTemplate: "http://{subDomain}.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={level}&TILEROW={row}&TILECOL={col}&tk=d24ad924673e258c4ab0586215144597",
+      urlTemplate: "http://{subDomain}.tianditu.gov.cn/img_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={level}&TILEROW={row}&TILECOL={col}&tk=d24ad924673e258c4ab0586215144597",
       subDomains: ["t0", "t1", "t2", "t3", "t4", "t5", "t6", "t7"],
     });
     var tiledLayer2 = new WebTileLayer({
