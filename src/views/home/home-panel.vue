@@ -28,20 +28,20 @@ export default {
 
 <style lang="less" scoped>
 .home-panel {
-  background: rgba(0, 19, 66, 1);
+  background: rgb(15, 15, 16);
   border: 2px solid rgba(8, 72, 138, 1);
   box-shadow: inset 0px 1px 20px 0px rgba(18, 142, 232, 0.34);
   .head {
     position: relative;
     height: 32px;
     .icon {
-      width: 14px;
-      height: 32px;
-      background: url('../../assets/images/panel-icon.png') no-repeat;
+      width: 360px;
+      height: 43px;
+      background: url('../../assets/images/panel-bg.png') no-repeat;
       display: inline-block;
       position: absolute;
-      left: 19px;
-      top: 24px;
+      left: 11px;
+      top: 14px;
     }
 
     .title {
@@ -51,8 +51,8 @@ export default {
       line-height: 26.06px;
       color: rgba(255, 255, 255, 1);
       position: absolute;
-      top: 20px;
-      left: 40px;
+      top: 19px;
+      left: 60px;
     }
   }
 
