@@ -1,4 +1,6 @@
 <template>
+  <!-- 引入iconfont资源 -->
+  <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4059165_eqoipvy5us.css">
   <div class="home">
     <!-- 头部导航栏 -->
     <div class="nav">
@@ -11,20 +13,87 @@
       </div>
     </div>
     <dv-border-box1>
-      <div
-        class="container"
-        :style="`width: ${width}rem`"
-        h18rem
-        color-white
-        flex
-        justify-center
-        items-center
-      >
+      <div class="container" :style="`width: ${width}rem`" h18rem color-white flex justify-center items-center>
         <!-- 左侧列表 -->
         <div class="left">
           <!-- 通过title 进行控制 -->
           <homePanel class="left-panel panel" title="气象信息">
-            <div class="farmdata"></div>
+            <div class="weatherdata">
+              <!-- 1 -->
+              <div class="box">
+                <div class="top1">
+                  <div class="top-about">
+                    <div class="top-about-left">
+                      <i class="iconfont icon-wendu" style="font-size:27px"></i>
+                    </div>
+                    <div class="top-about-right" >温度</div>
+                  </div>
+                </div>
+                <div class="bottom1">32 ℃</div>
+              </div>
+              <!-- 2 -->
+              <div class="box">
+                <div class="top1">
+                  <div class="top-about">
+                    <div class="top-about-left">
+                      <i class="iconfont icon-fengsu" style="font-size:27px"></i>
+                    </div>
+                    <div class="top-about-right">风速</div>
+                  </div>
+                </div>
+                <div class="bottom1">32 km/m²</div>
+              </div>
+              <!-- 3 -->
+              <div class="box">
+                <div class="top1">
+                  <div class="top-about">
+                    <div class="top-about-left">
+                      <i class="iconfont icon-fengxiang" style="font-size:27px"></i>
+                    </div>
+                    <div class="top-about-right">风向</div>
+                  </div>
+                </div>
+                <div class="bottom1">东南</div>
+              </div>
+              <!-- 4 -->
+              <div class="box">
+                <div class="top1">
+                  <div class="top-about">
+                    <div class="top-about-left">
+                      <i class="iconfont icon-eryanghuatannongdu" style="font-size:27px"></i>
+                    </div>
+                    <div class="top-about-right">二氧化碳</div>
+                  </div>
+                </div>
+                <div class="bottom1">101<i style="font-size: 6px;">CO2</i></div>
+              </div>
+              <!-- 5 -->
+              <div class="box">
+                <div class="top1">
+                  <div class="top-about">
+                    <div class="top-about-left" >
+                      <i class="iconfont icon-shidu" style="font-size:27px"></i>
+                    </div>
+                    <div class="top-about-right">湿度</div>
+                  </div>
+                </div>
+                <div class="bottom1">99 Rh</div>
+              </div>
+              <!-- 6 -->
+              <div class="box">
+                <div class="top1">
+                  <div class="top-about">
+                    <div class="top-about-left">
+                      <i class="iconfont icon-jiangyuliang" style="font-size:27px"></i>
+                    </div>
+                    <div class="top-about-right">降雨量</div>
+                  </div>
+                </div>
+                <div class="bottom1">8 mm</div>
+              </div>
+            </div>
+
+
           </homePanel>
           <homePanel class="left-panel panel" title="果园基本信息"> </homePanel>
           <homePanel class="left-panel panel" title="视频监控"> </homePanel>
@@ -40,10 +109,7 @@
           <homePanel class="panel" title="果树信息">
             <div class="jidizhonglei">
               <!-- 动态环图 -->
-              <dv-active-ring-chart
-                :config="zhongleiconf"
-                style="width: 150px; height: 150px"
-              />
+              <dv-active-ring-chart :config="zhongleiconf" style="width: 150px; height: 150px" />
             </div>
           </homePanel>
           <homePanel class="panel" title="发展趋势"></homePanel>
@@ -57,6 +123,8 @@
 
 <script>
 import * as echarts from "echarts";
+
+
 
 import HomeMap from "./map/HomeMap.vue";
 import homePanel from "./home-panel.vue";
@@ -128,6 +196,7 @@ export default {
 
     background-size: 100% 100%;
   }
+
   .nav-manel {
     width: 71.5625rem;
     height: 3.75rem;
@@ -137,6 +206,7 @@ export default {
     display: flex;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
     justify-content: space-around;
+
     .nav-buttom {
       font-size: 1rem;
       font-weight: 400;
@@ -148,7 +218,8 @@ export default {
       width: 9.4375rem;
       cursor: pointer;
     }
-    .nav-buttom:hover{
+
+    .nav-buttom:hover {
       color: antiquewhite;
     }
   }
@@ -171,8 +242,81 @@ export default {
     .panel {
       width: 100%;
       height: 100%;
+
+    }
+
+    //气象信息的六大盒子
+    .weatherdata {
+      display: flex;
+      flex-wrap: wrap; //换行
+      width: 350px;
+      height: 160px;
+      // background-color: #f0f0f0;
+      // padding: 20px;
+      margin: 20px 0 0 10px;
+      font-size: 10px;
+      text-align: center;  //这个好像有点多余，先不管他
+    }
+
+    .box {
+      width: 33.3%;
+      height: 50%;
+      // background-color: #ccc;
+      box-sizing: border-box;
+      // border: 1px solid #999;
+      // padding: 10px;
+      /* 在小盒子中添加内边距 */
+      display: flex;
+      /* 在小盒子中设置为弹性盒子 */
+      flex-direction: column;
+      /* 在小盒子中设置为垂直方向排列 */
+
+    }
+
+    .top1 {
+      height: 50%;
+      /* 上部分的高度为小盒子的一半 */
+      // background-color: #f0f0f0;
+      /* 设置上部分的背景色 */
+      flex-direction: column;
+    }
+
+    .top-about {
+      display: flex;
+      /* 在上下两个盒子中设置为弹性盒子 */
+      flex-direction: row;
+      /* 在上下两个盒子中设置为水平方向排列 */
+    }
+
+    .top-about-left {
+      width: 30%;
+      // background-color: red;
+      color: white;
+      text-align: right;
+    }
+
+    .top-about-right {
+      width: 70%;
+      // background-color: blue;
+      color:white;
+      font-size: 9px;
+      line-height: 30px;
+      text-align: left;
+      padding-left:15px;
+    }
+
+    .bottom1 {
+     /* 下部分的高度为小盒子的一半 */
+      height: 100%;
+      color: hsl(196, 90%, 51%);
+      // background-color: #999;// 设置下部分的背景色 
+      font-size: 15px;
+      font-family:system-ui;
+      padding-top: 10px;
+      text-align:center;
     }
   }
+
 
   .middle {
     overflow: hidden;
