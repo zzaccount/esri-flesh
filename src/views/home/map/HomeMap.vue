@@ -44,7 +44,6 @@ export default {
 
 <style lang="less" scoped>
 .mapDiv {
-  height: 100vh;
-  z-index: 0;
+  height: 80vh;
 }
 </style>
