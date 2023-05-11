@@ -101,19 +101,29 @@
           <div class="middle-bottom"></div>
         </div>
         <!-- 右侧列表 -->
-        <div class="right">
+        <div class="right" >
           <homePanel class="panel" title="气象数据">
-            <div class="right-weather-top" style="color: #ffff;">
-              <div>2023年5月11日</div>
-              <div><i></i> 晴  21 ℃</div>
+            <div style="height: 20px; width: 500px"></div>
+            <div class="right-weather-top" style="color: #ffff; height: 50px; width: 500px; display: flex;
+             flex-direction: row; " >
+              <div >2023年5月11日</div>
+              <div style="height: 50px; width:100px;  ">
+                <img src="../../assets/images/sunny.png" style="width: 50px; height: 45px; object-fit: cover;">
+                晴  21 ℃
+              </div>
             </div>
-            <div class="right-bottom">
-              <div>气象预警</div>
-              <div >正常</div>
+
+
+            <div class="right-weather-bottom" style="color: #ffff; height: 50px; width: 500px;  display: flex;
+             flex-direction: row;">
+              <div style=" ">气象预警</div>
+              <div  style=" color: rgb(18,183,243); ">正常</div>
             </div>
+
+            
           </homePanel>
           <homePanel class="panel" title="果树信息">
-            <div class="jidizhonglei" id="guosxx" style="height: 250px; width: 100%;">
+            <div class="jidizhonglei" id="guosxx" style="height: 230px; width: 100%;">
               <!-- 动态环图 -->
 
             </div>
@@ -473,5 +483,17 @@ export default {
 .bottom {
   height: 100px;
   width: 100vw;
+}
+// 右边栏第一格样式
+  .right-weather-top div{
+  flex: 1; 
+  border: 1.5px solid rgb(18,49,93);  
+  border-radius: 10px; line-height: 50px
+}
+  .right-weather-bottom div{
+  flex: 1; 
+  border: 1.5px solid rgb(18,49,93);  
+  border-radius: 10px; 
+  line-height: 50px
 }
 </style>
