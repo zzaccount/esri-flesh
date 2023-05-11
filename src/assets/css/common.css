@@ -10,3 +10,6 @@
 .dv-border-svg-container{
   z-index: 10;
 }
+.header{
+  background-image: url('../images/bgc.png') !important;
+}
