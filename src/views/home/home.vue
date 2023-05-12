@@ -120,7 +120,7 @@
             </div>
           </homePanel>
           <homePanel class="left-panel panel" title="设备列表">
-            <div class="device-bar" id="device-bar" style="" ></div>
+            <div class="device-bar" id="device-bar" style=""></div>
           </homePanel>
           <homePanel class="left-panel panel" title="视频监控"> </homePanel>
         </div>
@@ -133,20 +133,46 @@
         <!-- 右侧列表 -->
         <div class="right">
           <homePanel class="panel" title="气象数据">
-            <div class="right-weather-top" style="color: #ffff">
+            <div style="height: 20px; width: 500px"></div>
+            <div
+              class="right-weather-top"
+              style="
+                color: #ffff;
+                height: 50px;
+                width: 500px;
+                display: flex;
+                flex-direction: row;
+              "
+            >
               <div>2023年5月11日</div>
-              <div><i></i> 晴 21 ℃</div>
+              <div style="height: 50px; width: 100px">
+                <img
+                  src="../../assets/images/sunny.png"
+                  style="width: 50px; height: 45px; object-fit: cover"
+                />
+                晴 21 ℃
+              </div>
             </div>
-            <div class="right-bottom">
-              <div>气象预警</div>
-              <div>正常</div>
+
+            <div
+              class="right-weather-bottom"
+              style="
+                color: #ffff;
+                height: 50px;
+                width: 500px;
+                display: flex;
+                flex-direction: row;
+              "
+            >
+              <div style="">气象预警</div>
+              <div style="color: rgb(18, 183, 243)">正常</div>
             </div>
           </homePanel>
           <homePanel class="panel" title="果树信息">
             <div
               class="jidizhonglei"
               id="guosxx"
-              style="height: 250px; width: 100%"
+              style="height: 230px; width: 100%"
             >
               <!-- 动态环图 -->
             </div>
@@ -247,17 +273,38 @@ export default {
     console.log(device);
     var BarChart = echarts.init(device);
     BarChart.setOption({
-      xAxis: {
-        type: "category",
-        data: ["温度传感器", "湿度传感器", "光照传感器", "土壤湿度传感器", "雨量传感器", "风速传感器", "CO2传感器"],
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          type: "shadow",
+        },
       },
-      yAxis: {
-        type: "value",
+      grid: {
+        left: "3%",
+        right: "4%",
+        bottom: "3%",
+        containLabel: true,
       },
+      xAxis: [
+        {
+          type: "category",
+          data: ["温度传感器", "湿度传感器", "光照传感器", "雨量传感器", "风速传感器"],
+          axisTick: {
+            alignWithLabel: true,
+          },
+        },
+      ],
+      yAxis: [
+        {
+          type: "value",
+        },
+      ],
       series: [
         {
-          data: [12, 20, 15, 8, 7, 11, 13],
+          name: "Direct",
           type: "bar",
+          barWidth: "60%",
+          data: [10, 12, 8, 9, 14],
         },
       ],
     });
@@ -1965,7 +2012,7 @@ export default {
     flex-direction: column;
     justify-content: space-around;
     /* 设备列表 */
-    .device-bar{
+    .device-bar {
       width: 25vw;
       height: 30vh;
     }
@@ -2068,7 +2115,6 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
   }
 
   .panel {
@@ -2080,5 +2126,18 @@ export default {
 .bottom {
   height: 100px;
   width: 100vw;
+}
+// 右边栏第一格样式
+.right-weather-top div {
+  flex: 1;
+  border: 1.5px solid rgb(18, 49, 93);
+  border-radius: 10px;
+  line-height: 50px;
+}
+.right-weather-bottom div {
+  flex: 1;
+  border: 1.5px solid rgb(18, 49, 93);
+  border-radius: 10px;
+  line-height: 50px;
 }
 </style>
